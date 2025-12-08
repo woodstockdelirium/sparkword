@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SparkWord | Sign Up for Free Analysis</title>
+</head>
+<body>
+
+    <header>
+    <a href="index.html">
+        <img src="images/logo.png" alt="SparkWord - long-tail keyword research tool for SEO">
+        <h1>SparkWord</h1>
+    </a>
+    
+
+        <nav>
+            <ul>
+                <li><a href="pricing.html">pricing</a></li>
+                <li><a href="about.html">about us</a></li>
+                <li><a href="contacts.html">contacts</a></li> 
+            </ul>
+        </nav>
+        
+    </header>
+
+    <hr> 
+
+    <main>
+        
+        <section>
+            <h2>Start your free SparkWord trial</h2> 
+            <p>Join thousands of content marketers and begin dominating search results.</p>
+            
+            <form action="/api/register" method="POST">
+                
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+
+                <div>
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required minlength="8">
+                </div>
+                
+                <div>
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the Terms and Privacy Policy.</label>
+                </div>
+                
+                <button type="submit">Create Account</button>
+                
+                <p>Already have an account? <a href="login.html">Log In here</a>.</p>
+
+            </form>
+        </section>
+
+    </main>
+
+    <hr>
+
+<footer>
+        <p>
+            <a href="contacts.html">Contact Us</a> 
+            | 
+            <a href="privacy.html">Privacy Policy</a> 
+            | 
+            <a href="terms.html">Terms of Service</a>
+        </p>
+        <small>&copy; 2025 SparkWord. All rights reserved.</small>
+    </footer>
+
+</body>
+</html>

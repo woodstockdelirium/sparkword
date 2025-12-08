@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SparkWord | Account Login</title>
+</head>
+<body>
+
+    <header>
+    <a href="index.html">
+        <img src="images/logo.png" alt="SparkWord - long-tail keyword research tool for SEO">
+        <h1>SparkWord</h1>
+    </a>
+    
+
+        <nav>
+            <ul>
+                <li><a href="pricing.html">pricing</a></li>
+                <li><a href="about.html">about us</a></li>
+                <li><a href="contacts.html">contacts</a></li> 
+            </ul>
+        </nav>
+        
+    </header>
+
+    <hr> 
+
+    <main>
+        
+        <section>
+            <h2>Log In to Your SparkWord Account</h2> 
+            <p>Access your long-tail keyword research dashboard.</p>
+            
+            <form action="/api/login" method="POST">
+                
+                <div>
+                    <label for="username_or_email">Username or Email:</label>
+                    <input type="text" id="username_or_email" name="username_or_email" required>
+                </div>
+
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <div>
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Remember Me</label>
+                </div>
+                
+                <button type="submit">Log In</button>
+                
+                <p><a href="forgot_password.html">Forgot your password?</a></p>
+
+                <p>Don't have an account? <a href="registration.html">Sign Up here</a>.</p>
+
+            </form>
+        </section>
+
+    </main>
+
+    <hr>
+
+<footer>
+        <p>
+            <a href="contacts.html">Contact Us</a> 
+            | 
+            <a href="privacy.html">Privacy Policy</a> 
+            | 
+            <a href="terms.html">Terms of Service</a>
+        </p>
+        <small>&copy; 2025 SparkWord. All rights reserved.</small>
+    </footer>
+
+</body>
+</html>
