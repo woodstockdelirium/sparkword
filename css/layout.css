@@ -1,0 +1,28 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: var(--color-info-block-bg); 
+    border-bottom: 1px solid var(--color-line); 
+}
+
+.logo-link {
+    display: flex; 
+    align-items: center;
+    gap: 10px;
+    color: var(--color-text-dark);
+    text-decoration: none;
+}
+header img {
+    height: 30px; 
+}
+footer {
+    padding: 25px 40px;
+    text-align: center;
+    background-color: var(--color-footer-bg); 
+    border-top: 1px solid var(--color-line);
+    color: white; 
+    font-family: var(--font-roboto);
+    font-size: 0.8rem;
+}

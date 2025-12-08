@@ -1,0 +1,176 @@
+
+
+nav ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    display: flex; 
+    gap: 15px; 
+}
+
+nav a {
+    display: block; 
+    background-color: var(--color-button); 
+    color: var(--color-link-text); 
+    padding: 10px 15px; 
+    border-radius: 4px;
+    text-decoration: none; 
+    font-family: var(--font-inria-serif); 
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+nav a:hover {
+    background-color: #5d6199; 
+}
+
+
+footer a {
+    color: white; 
+    font-family: var(--font-roboto); 
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--color-button);
+}
+
+.hero-section {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.hero-cta {
+    background-color: var(--color-button);
+    color: white; 
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 30px;
+    font-family: var(--font-inria-serif);
+    transition: background-color 0.3s;
+}
+
+.hero-cta:hover {
+    background-color: #5d6199;
+}
+
+.features-container h3 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+    padding: 30px 0;
+}
+.feature-item {
+    width: 250px;
+    padding: 25px;
+    background-color: var(--color-info-block-bg); 
+    color: black; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.feature-item p {
+    color: black; 
+}
+@media (max-width: 992px) {
+    .feature-item, .plan-card {
+        width: 45%; 
+    }
+}
+
+@media (max-width: 768px) {
+
+    .dashboard-layout {
+        flex-direction: column; 
+    }
+    .sidebar, .main-content {
+        width: 100%; 
+        padding-left: 0;
+        padding-right: 0;
+        border-left: none; 
+        margin-bottom: 20px;
+    }
+    
+    .features-grid, .pricing-grid {
+        flex-direction: column; 
+        align-items: center;
+    }
+    .feature-item, .plan-card {
+        width: 90%; 
+    }
+
+    header {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .menu-toggle {
+        display: block; 
+    }
+
+    nav ul {
+        display: none; 
+        flex-direction: column; 
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        width: 100%;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+        background-color: white;
+    }
+    
+    nav ul li {
+        width: 100%;
+    }
+    nav ul li a {
+        background-color: transparent; 
+        color: var(--color-text-dark); 
+        border-radius: 0;
+        padding: 15px 20px;
+        border-bottom: 1px solid var(--color-line);
+        text-align: left;
+    }
+    nav.is-open ul {
+        display: flex; 
+    }
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="password"] {
+    padding: 10px;
+    border: 1px solid var(--color-line, #CCCCCC); 
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:not([type="checkbox"]):not(:focus):invalid {
+    border-color: #CC0000; 
+    box-shadow: 0 0 5px rgba(204, 0, 0, 0.5);
+}
+
+input:not([type="checkbox"]):valid {
+    border-color: #00AA00;
+}
+
+.error-message {
+    color: #CC0000;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-top: 5px;
+}

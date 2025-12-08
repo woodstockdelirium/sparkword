@@ -1,0 +1,43 @@
+:root {
+    --color-bg: #E0DADA;             
+    --color-text-dark: #1F2937;      
+    --color-line: #DDDDDD;          
+    
+    --color-button: #7B7FC9;        
+    --color-info-block-bg: #FFC72C;  
+    --color-footer-bg: #292057;      
+
+    --font-inria-serif: 'Inria Serif', serif; 
+    --font-roboto: 'Roboto', sans-serif;      
+    --font-open-sans: 'Open Sans', sans-serif; 
+}
+body {
+    font-family: var(--font-roboto); 
+    background-color: var(--color-bg); 
+    color: var(--color-text-dark); 
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+h1, h2, h3 {
+    font-family: var(--font-open-sans); 
+    color: var(--color-text-dark); 
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+header a h1 {
+    font-family: var(--font-inria-serif);
+    font-size: 1.8rem;
+    margin: 0;
+}
+p {
+    font-family: var(--font-roboto);
+    color: var(--color-text-dark); 
+    margin-bottom: 15px;
+}
