@@ -29,3 +29,8 @@ forgot passport protocol
 cabinet(billing, results, saved reports etc)
 
 also: customisation
+
+
+**Added CSS**
+
+Page use Flexbox, media queries and Grid for optimization.
