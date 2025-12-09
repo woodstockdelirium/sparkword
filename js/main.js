@@ -38,8 +38,29 @@ function addNewParagraphUsingAppend() {
     }
 }
 
+function displayCurrentDate() {
+    const now = new Date();
+    const options = { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+    };
+    
+    const formattedDate = now.toLocaleDateString('uk-UA', options);
+    
+    const dateElement = document.getElementById('current-date');
+    
+if (dateElement) {
+        dateElement.textContent = formattedDate;
+        console.log(`Current date "${formattedDate}" successfully displayed in the footer.`);
+    } else {
+        console.error('Element with ID "current-date" not found!');
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     styleAllElements('hero-cta'); 
     addNewParagraphUsingAppend();
+    displayCurrentDate();
 });
 
