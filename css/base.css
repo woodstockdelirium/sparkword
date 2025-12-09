@@ -11,6 +11,17 @@
     --font-roboto: 'Roboto', sans-serif;      
     --font-open-sans: 'Open Sans', sans-serif; 
 }
+body.dark-mode {
+  --color-bg: #24093d;            
+  --color-text-dark: #f0f0f0;     
+  --color-line: #3a3a3a;          
+  
+  --color-button: #5E5E9C;        
+  --color-info-block-bg: #3C3C3C; 
+  --color-footer-bg: #0A0A0A;     
+}
+
+
 body {
     font-family: var(--font-roboto); 
     background-color: var(--color-bg); 

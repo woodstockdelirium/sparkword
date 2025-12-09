@@ -87,16 +87,70 @@ function setupAccordions() {
     });
 }
 
+function initializeThemeToggle() {
+    const toggleButton = document.getElementById('theme-toggle');
+    const bodyElement = document.body;
 
+    const DARK_THEME_CLASS = 'dark-mode';
+    const STORAGE_KEY = 'themePreference';
+    const SUN_EMOJI = '☀️'; 
+    const MOON_EMOJI = '🌙'; 
 
+    if (!toggleButton) {
+        console.error('Element with ID "theme-toggle" not found! Cannot setup theme toggle.');
+        return;
+    }
 
+    function updateToggleButton(isDarkMode) {
+        if (isDarkMode) {
+            toggleButton.textContent = SUN_EMOJI;
+            toggleButton.setAttribute('aria-label', 'Switch to light theme');
+        } else {
+            toggleButton.textContent = MOON_EMOJI;
+            toggleButton.setAttribute('aria-label', 'Switch to dark theme');
+        }
+    }
 
+    function toggleTheme() {
+        bodyElement.classList.toggle(DARK_THEME_CLASS);
+        const isDarkMode = bodyElement.classList.contains(DARK_THEME_CLASS);
+        
+        localStorage.setItem(STORAGE_KEY, isDarkMode ? 'dark' : 'light');
+        console.log(`Theme toggled to: ${isDarkMode ? 'dark' : 'light'}`);
 
+        updateToggleButton(isDarkMode); 
+    }
+
+    function initializeTheme() {
+        const storedPreference = localStorage.getItem(STORAGE_KEY);
+        let shouldBeDark = false;
+
+        if (storedPreference === 'dark') {
+            shouldBeDark = true;
+        } else if (storedPreference === 'light') {
+            shouldBeDark = false;
+        } else {
+            shouldBeDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        }
+
+        if (shouldBeDark) {
+            bodyElement.classList.add(DARK_THEME_CLASS);
+        }
+
+        const isDarkModeApplied = bodyElement.classList.contains(DARK_THEME_CLASS);
+        updateToggleButton(isDarkModeApplied); 
+    }
+
+    initializeTheme(); 
+    
+    toggleButton.addEventListener('click', toggleTheme);
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     styleAllElements('hero-cta'); 
     addNewParagraphUsingAppend();
     displayCurrentDate();
     setupAccordions();
-});
 
+    initializeThemeToggle(); 
+});
