@@ -146,11 +146,27 @@ function initializeThemeToggle() {
     toggleButton.addEventListener('click', toggleTheme);
 }
 
+function setupNavigationHover() {
+    const navLinks = document.querySelectorAll('nav a');
+    const HOVER_CLASS = 'nav-link-hover';
+
+    navLinks.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            link.classList.add(HOVER_CLASS);
+        });
+
+        link.addEventListener('mouseleave', () => {
+            link.classList.remove(HOVER_CLASS);
+        });
+    });
+    console.log(`Navigation hover implemented for ${navLinks.length} links using JS classes.`);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     styleAllElements('hero-cta'); 
     addNewParagraphUsingAppend();
     displayCurrentDate();
     setupAccordions();
-
     initializeThemeToggle(); 
+    setupNavigationHover();
 });
