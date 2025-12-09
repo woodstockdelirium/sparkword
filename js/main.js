@@ -186,7 +186,7 @@ function setupKeyNavigation() {
                 if (currentFontSize > 10) {
                     currentFontSize -= step;
                     updateFontSize();
-                    event.preventDefault
+                    event.preventDefault();
                 }
                 break;
         }
