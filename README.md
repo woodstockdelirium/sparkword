@@ -1,4 +1,4 @@
-## **Created by Serhii Illarionov, KI-31**
+# **Created by Serhii Illarionov, KI-31**
 
 SparkWord - long-tail keyword research tool for SEO
 
@@ -31,6 +31,6 @@ cabinet(billing, results, saved reports etc)
 also: customisation
 
 
-# **Added CSS**
+## **Added CSS**
 
 Page use Flexbox, media queries and Grid for optimization.

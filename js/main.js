@@ -162,6 +162,55 @@ function setupNavigationHover() {
     console.log(`Navigation hover implemented for ${navLinks.length} links using JS classes.`);
 }
 
+
+function setupKeyNavigation() {
+    const bodyElement = document.body;
+    let currentFontSize = 16; 
+    const step = 2; 
+
+    function updateFontSize() {
+        bodyElement.style.fontSize = `${currentFontSize}px`;
+        console.log(`Font size changed to: ${currentFontSize}px`);
+    }
+
+    function handleKeyDown(event) {
+        switch (event.key) {
+            case 'ArrowUp':
+                if (currentFontSize < 32) {
+                    currentFontSize += step;
+                    updateFontSize();
+                    event.preventDefault(); 
+                }
+                break;
+            case 'ArrowDown':
+                if (currentFontSize > 10) {
+                    currentFontSize -= step;
+                    updateFontSize();
+                    event.preventDefault
+                }
+                break;
+        }
+    }
+    updateFontSize(); 
+    document.addEventListener('keydown', handleKeyDown);
+    console.log('Key navigation (font size control) initialized.');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     styleAllElements('hero-cta'); 
     addNewParagraphUsingAppend();
@@ -169,4 +218,5 @@ document.addEventListener('DOMContentLoaded', () => {
     setupAccordions();
     initializeThemeToggle(); 
     setupNavigationHover();
+    setupKeyNavigation();
 });
