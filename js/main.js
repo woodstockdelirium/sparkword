@@ -58,9 +58,45 @@ if (dateElement) {
     }
 }
 
+function setupAccordions() {
+    const accordionButtons = document.querySelectorAll('.accordion-button');
+
+    accordionButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetId = button.getAttribute('data-target');
+            const targetContent = document.getElementById(targetId);
+
+            if (targetContent) {
+                targetContent.classList.toggle('show');
+
+                const isShown = targetContent.classList.contains('show');
+                const defaultText = isShown ? 'Hide' : 'Show more';
+                let newText;
+
+                if (targetId === 'edge-content') {
+                    newText = isShown ? 'Hide benefits' : 'Show benefits';
+                } else if (targetId === 'team-content') {
+                    newText = isShown ? 'Hide team' : 'Show team';
+                } else {
+                    newText = defaultText;
+                }
+                
+                button.textContent = newText;
+            }
+        });
+    });
+}
+
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     styleAllElements('hero-cta'); 
     addNewParagraphUsingAppend();
     displayCurrentDate();
+    setupAccordions();
 });
 
