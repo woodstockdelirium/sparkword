@@ -46,7 +46,7 @@ function displayCurrentDate() {
         day: 'numeric' 
     };
     
-    const formattedDate = now.toLocaleDateString('uk-UA', options);
+    const formattedDate = now.toLocaleDateString('en-US', options);
     
     const dateElement = document.getElementById('current-date');
     
