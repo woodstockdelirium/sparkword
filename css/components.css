@@ -207,3 +207,19 @@ input:not([type="checkbox"]):valid {
 .accordion-button:hover {
     background-color: #ddd;
 }
+.error-text {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    height: 1.2rem;
+}
+
+.input-error {
+    border: 2px solid red;
+}
+
+.success-message {
+    color: green;
+    font-weight: bold;
+    margin-top: 15px;
+}

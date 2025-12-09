@@ -38,31 +38,35 @@
             <h2>Get in touch with SparkWord support</h2> 
             <p>We're here to help you dominate search. Send us a message and we'll get back to you within 24 hours.</p>
             
-            <form action="/api/contact" method="POST">
-                
-                <div>
-                    <label for="name">Your Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
+           <form id="contactForm" novalidate>
+    <div>
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+        <p class="error-text" id="nameError"></p>
+    </div>
 
-                <div>
-                    <label for="email">Your Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
+    <div>
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+        <p class="error-text" id="emailError"></p>
+    </div>
 
-                <div>
-                    <label for="subject">Subject:</label>
-                    <input type="text" id="subject" name="subject" required>
-                </div>
-                
-                <div>
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="6" required></textarea>
-                </div>
-                
-                <button type="submit">Send Message</button>
+    <div>
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required>
+        <p class="error-text" id="subjectError"></p> 
+    </div>
+    
+    <div>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+        <p class="error-text" id="messageError"></p>
+    </div>
+    
+    <button type="submit">Send Message</button>
 
-            </form>
+    <div id="successMessage" class="success-message"></div>
+</form>
         </section>
 
     </main>

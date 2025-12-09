@@ -196,19 +196,118 @@ function setupKeyNavigation() {
     console.log('Key navigation (font size control) initialized.');
 }
 
+function setupContactFormValidation() {
+    const form = document.getElementById('contactForm');
+    
+    if (!form) {
+        console.error('Form with ID "contactForm" not found! Validation setup skipped.');
+        return;
+    }
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const subjectInput = document.getElementById('subject'); 
+    const messageInput = document.getElementById('message');
+    
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+    const subjectError = document.getElementById('subjectError'); 
+    const messageError = document.getElementById('messageError');
+    
+    const successMessageBlock = document.getElementById('successMessage');
+    function showValidationError(inputElement, errorElement, message) {
+        inputElement.classList.add('input-error');
+        errorElement.textContent = message;
+    }
+
+    function clearValidationError(inputElement, errorElement) {
+        inputElement.classList.remove('input-error');
+        errorElement.textContent = '';
+    }
+
+    function validateName() {
+        const value = nameInput.value.trim();
+        if (value.length < 3) {
+            showValidationError(nameInput, nameError, 'Name must contain at least 3 characters.');
+            return false;
+        }
+        clearValidationError(nameInput, nameError);
+        return true;
+    }
+
+    function validateEmail() {
+        const value = emailInput.value.trim();
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+        
+        if (!emailPattern.test(value)) {
+            showValidationError(emailInput, emailError, 'Please enter a valid email address (must contain @ and domain).');
+            return false;
+        }
+        clearValidationError(emailInput, emailError);
+        return true;
+    }
+    
+    function validateSubject() {
+        const value = subjectInput.value.trim();
+        if (value.length < 5) {
+            showValidationError(subjectInput, subjectError, 'Subject must be longer than 5 characters.');
+            return false;
+        }
+        clearValidationError(subjectInput, subjectError);
+        return true;
+    }
+
+    function validateMessage() {
+        const value = messageInput.value.trim();
+        if (value.length < 10) {
+            showValidationError(messageInput, messageError, 'Message must contain at least 10 characters.');
+            return false;
+        }
+        clearValidationError(messageInput, messageError);
+        return true;
+    }
 
 
+    form.addEventListener('submit', (event) => {
+        event.preventDefault(); 
+        successMessageBlock.textContent = ''; 
+        
+        const isNameValid = validateName();
+        const isEmailValid = validateEmail();
+        const isSubjectValid = validateSubject(); 
+        const isMessageValid = validateMessage();
 
+        if (isNameValid && isEmailValid && isSubjectValid && isMessageValid) {
+            
+            const formData = {
+                name: nameInput.value.trim(),
+                email: emailInput.value.trim(),
+                subject: subjectInput.value.trim(),
+                message: messageInput.value.trim()
+            };
 
+            console.log('--- Form Data Submitted ---');
+            console.log(formData);
+            
+            form.reset();
+            successMessageBlock.textContent = 'Форма успішно надіслана!';
+            
+            nameInput.classList.remove('input-error');
+            emailInput.classList.remove('input-error');
+            subjectInput.classList.remove('input-error');
+            messageInput.classList.remove('input-error');
 
-
-
-
-
-
-
-
-
+        } else {
+            console.warn('--- Form Data Submitted Successfully ---');
+        }
+    });
+    
+    nameInput.addEventListener('blur', validateName);
+    emailInput.addEventListener('blur', validateEmail);
+    subjectInput.addEventListener('blur', validateSubject);
+    messageInput.addEventListener('blur', validateMessage);
+    
+    console.log('Contact form validation successfully initialized.');
+}
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -219,4 +318,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeThemeToggle(); 
     setupNavigationHover();
     setupKeyNavigation();
+    setupContactFormValidation(); 
 });
